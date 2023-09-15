@@ -2,8 +2,8 @@ import Layout from "@/components/template/Layout";
 
 export default function Home() {
   return (
-    <Layout title="Notifications" subtitle="Your notifications">
-      <h1>Theme Change</h1>
+    <Layout title="User Perfil" subtitle="Your settings">
+      <h1>User Perfil</h1>
     </Layout>
   )
 }

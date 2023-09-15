@@ -1,8 +1,11 @@
-import { bell, home, logout, settings } from "../icons";
+import useAuthData from "@/data/hook/useAuthData";
+import { bell, home, logout as logoutIcon, settings } from "../icons";
 import ItemMenu from "./ItemMenu";
 import Logo from "./Logo";
 
 export default function Sidebar() {
+    const { logout } = useAuthData()
+
     return (
         <aside className={`flex flex-col
             bg-gray-200 text-gray-700
@@ -22,8 +25,9 @@ export default function Sidebar() {
                 <ItemMenu url="/notifications" text="Notifications" icon={bell}/>
             </ul>
             <ul>
-                <ItemMenu text="Logout" icon={logout} 
-                    onClick={() => console.log('logout')} 
+                <ItemMenu text="Logout" icon={logoutIcon}
+                    // onClick={
+                    onClick={logout}
                     className={`
                         text-red-600 dark:text-red-400
                         hover:bg-red-400 hover:text-white
